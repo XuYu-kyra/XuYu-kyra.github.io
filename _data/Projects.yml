@@ -1,0 +1,73 @@
+subject: Projects
+listing-order: 3
+icon: "/assets/img/clipboard-list.svg"
+contents:
+  - title: "RAG-based Historical Character Dialogue System"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Dec 2024 - May 2025"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["Python", "BeautifulSoup", "BERT", "RoBERTa", "Weaviate", "Flask", "DeepSeek API", "GPT-SoVITS", "HTML/CSS/JavaScript"]
+    description: "Developed an intelligent dialogue system enabling realistic interactions with historical figure Sun Ce by integrating language modeling, knowledge retrieval, and speech synthesis technologies."
+    achievements:
+      - "Built multi-source data pipeline by crawling and cleaning content from historical texts with alias disambiguation"
+      - "Created knowledge retrieval system using SentenceTransformer, achieving 30% latency reduction under high concurrency"
+      - "Designed RAG pipeline with role-specific prompt templates for historically accurate responses"
+      - "Integrated GPT-SoVITS for real-time text-to-speech conversion"
+      - "Developed responsive web interface with user feedback mechanisms"
+    image: "/assets/img/dongao.png"
+    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
+    github: "https://github.com/yourusername/rag-historical-dialogue"
+    live_demo: "https://your-demo-site.com"
+  
+  - title: "PetCare AI - Intelligent Veterinary Dialogue System"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Jun 2023 - Jul 2024"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["Django", "BERT", "GPT-3", "SparkAI", "jieba", "scikit-learn"]
+    description: "Led development of an AI-powered dialogue system simulating conversations between pet doctors and users through natural language processing."
+    achievements:
+      - "Architected backend logic using Django for request handling and database management"
+      - "Implemented NLP capabilities using BERT and GPT-3 for context-aware responses"
+      - "Applied jieba for Chinese word segmentation and text processing"
+      - "Designed scalable system architecture supporting user personalization"
+    image: "/assets/img/dongao.png"
+    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
+    github: "https://github.com/yourusername/rag-historical-dialogue"
+    live_demo: "https://your-demo-site.com"
+  
+  - title: "Let's Buy - AI-Driven Senior Shopping Platform"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Apr 2023 - Jun 2024"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["KNN", "Collaborative Filtering", "Content-based Algorithms"]
+    description: "Developed an AI-powered online clothing platform specifically designed for elderly users (55-85 years)."
+    achievements:
+      - "Implemented KNN model for personalized clothing size recommendations"
+      - "Prepared training data by collecting and cleaning senior clothing size charts"
+      - "Optimized model performance through cross-validation and hyperparameter tuning"
+      - "Enhanced recommendation accuracy using advanced filtering algorithms"
+    image: "/assets/img/dongao.png"
+    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
+    github: "https://github.com/yourusername/rag-historical-dialogue"
+    live_demo: "https://your-demo-site.com"
+  
+  - title: "Facial Expression Music Recommendation System"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Feb 2023 - Apr 2024"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["OpenCV", "DeepFace", "LeNet", "AlexNet", "Sentiment Analysis"]
+    description: "Created a personalized music recommendation system utilizing facial expression recognition for emotion-aware music selection."
+    achievements:
+      - "Built facial expression recognition system using OpenCV and DeepFace"
+      - "Processed and analyzed lyrics data through advanced NLP techniques"
+      - "Implemented emotion labeling using sentiment dictionaries"
+      - "Developed integrated emotion-to-music recommendation logic"
+    image: "/assets/img/dongao.png"
+    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
+    github: "https://github.com/yourusername/rag-historical-dialogue"
+    live_demo: "https://your-demo-site.com"
+  

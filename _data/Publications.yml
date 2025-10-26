@@ -1,0 +1,9 @@
+subject: Research Interests
+listing-order: 4
+icon: "/assets/img/flask.svg"
+contents:
+  - title: Retrieval-Augmented Generation and Large Language Models for Character Personality Modeling and Dialogue Systems
+  - title: Multimodal Human-Robot Interaction and Cognitive Robotics
+  - title: Computer Vision for Affective Computing, Behavior Analysis, and Robotic Environmental Perception
+  - title: Personalized Recommendation Algorithms based on User State (e.g., Expression, Behavior) and Preference
+  - title: Robot Reinforcement Learning and Autonomous Mobile Systems

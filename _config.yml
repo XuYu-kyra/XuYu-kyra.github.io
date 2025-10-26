@@ -1,0 +1,27 @@
+title: Yu Xu - CPD
+profile_img: /assets/img/avatar.png
+icon_img: /assets/img/icon.webp
+
+name: "Yu Xu"
+job: ""
+
+phone_number: +44 07464233713/+86 13728688117/+852 59570379
+address: Manchester, United Kingdom
+email: yu.xu-4@postgrad.manchester.ac.uk
+linkedin_username: 徐瑜
+github_username: XuYu-kyra
+
+
+# If your repo name follows the format "<user-name>.github.io", then leave the below blank.
+# Otherwise, set its value as "/<repo-name>". ex) baseurl: /resume
+baseurl: 
+
+exclude:
+  - _posts/
+  - resources/
+  - vendor/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
