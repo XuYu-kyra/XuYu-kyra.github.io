@@ -15,10 +15,10 @@ contents:
       - "Designed RAG pipeline with role-specific prompt templates for historically accurate responses"
       - "Integrated GPT-SoVITS for real-time text-to-speech conversion"
       - "Developed responsive web interface with user feedback mechanisms"
-    image: "/assets/img/dongao.png"
-    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
-    github: "https://github.com/yourusername/rag-historical-dialogue"
-    live_demo: "https://your-demo-site.com"
+    image: "/assets/img/sc.png"
+    demo_video: "/assets/videos/demo.gif"
+    github: "https://github.com/XuYu-kyra/Rag_dialogue_sc"
+    live_demo: "https://github.com/XuYu-kyra/Rag_dialogue_sc/blob/main/static/final.mp4"
   
   - title: "PetCare AI - Intelligent Veterinary Dialogue System"
     type: "featured-project"  # 特殊类型，用于特殊样式
@@ -32,10 +32,10 @@ contents:
       - "Implemented NLP capabilities using BERT and GPT-3 for context-aware responses"
       - "Applied jieba for Chinese word segmentation and text processing"
       - "Designed scalable system architecture supporting user personalization"
-    image: "/assets/img/dongao.png"
-    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
-    github: "https://github.com/yourusername/rag-historical-dialogue"
-    live_demo: "https://your-demo-site.com"
+    image: "/assets/img/pet.png"
+    #demo_video: ""
+    github: "https://github.com/XuYu-kyra/PetCare_AI"
+    live_demo: "https://github.com/XuYu-kyra/PetCare_AI"
   
   - title: "Let's Buy - AI-Driven Senior Shopping Platform"
     type: "featured-project"  # 特殊类型，用于特殊样式
@@ -49,10 +49,10 @@ contents:
       - "Prepared training data by collecting and cleaning senior clothing size charts"
       - "Optimized model performance through cross-validation and hyperparameter tuning"
       - "Enhanced recommendation accuracy using advanced filtering algorithms"
-    image: "/assets/img/dongao.png"
-    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
-    github: "https://github.com/yourusername/rag-historical-dialogue"
-    live_demo: "https://your-demo-site.com"
+    image: "/assets/img/image.png"
+    demo_video: "/assets/videos/project-demo.gif"
+    github: "https://github.com/XuYu-kyra/LB"
+    live_demo: "https://github.com/XuYu-kyra/LB/blob/main/%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4"
   
   - title: "Facial Expression Music Recommendation System"
     type: "featured-project"  # 特殊类型，用于特殊样式
@@ -66,8 +66,8 @@ contents:
       - "Processed and analyzed lyrics data through advanced NLP techniques"
       - "Implemented emotion labeling using sentiment dictionaries"
       - "Developed integrated emotion-to-music recommendation logic"
-    image: "/assets/img/dongao.png"
-    demo_video: "/assets/videos/Team5-Requirements Evaluation.gif"
-    github: "https://github.com/yourusername/rag-historical-dialogue"
-    live_demo: "https://your-demo-site.com"
+    image: "/assets/img/1.png"
+    #demo_video: ""
+    github: "https://github.com/XuYu-kyra/Facial_music"
+    live_demo: "https://github.com/XuYu-kyra/Facial_music"
   
