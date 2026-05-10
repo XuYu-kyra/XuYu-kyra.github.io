@@ -1,0 +1,16 @@
+subject: Skills
+listing-order: 5
+icon: "/assets/img/screwdriver-wrench.svg"
+contents:
+  - title: Programming Languages
+    description: "Python, C, C++, C#, JavaScript, HTML, CSS, SQL"
+  - title: Robotics & Middleware
+    description: "ROS 2 (Jazzy), RViz, RGB-D perception, vision_msgs, object pose estimation, robot vision pipeline integration"
+  - title: AI / Machine Learning
+    description: "BERT, RoBERTa, SentenceTransformers, RAG pipelines, GPT-SoVITS, scikit-learn, TensorFlow, PyTorch, KNN, collaborative filtering, content-based recommendation"
+  - title: Computer Vision & Perception
+    description: "OpenCV, DeepFace, HSV color segmentation, blob detection, facial expression recognition, depth projection, multi-frame smoothing"
+  - title: Web & Application Development
+    description: "Flask, Django, Streamlit, Jekyll, responsive front-end development, REST-style application workflows"
+  - title: Data & Tools
+    description: "Weaviate, BeautifulSoup, Git, GitHub, Linux, AWS, Unity, Maya, After Effects"

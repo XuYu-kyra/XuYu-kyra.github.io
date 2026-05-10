@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+{% assign meta = "" | split: "" %}
+{% for yml_file in site.data %}
+  {% assign meta = meta | push:yml_file[1] %}
+{% endfor %}
+{% assign meta = meta | sort: 'listing-order' %}
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  {% seo %}
+
+  <link rel="icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
+  <link rel="shortcut icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+  <div id="sidebar">
+    <ul class="toc-box"></ul>
+  </div>
+  <div id="about">
+    <div class="profile-zone">
+      <img class="profile-img" src="{{ site.profile_img | prepend: site.baseurl }}" alt="My Photo">
+      <ul class="personal-info">
+        {% if site.phone_number %}
+        <li><a aria-label="My Phone">
+          <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}" alt="My Phone Number">
+          <div><span>{{ site.phone_number }}</span></div>
+        </a></li>
+        {% endif %}
+        {% if site.address %}
+        <li><a aria-label="My Address" href="https://www.google.com/maps/search/{{ site.address }}">
+          <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}" alt="My Address">
+          <div><span>{{ site.address }}</span></div>
+        </a></li>
+        {% endif %}
+        {% if site.email %}
+          <li><a aria-label="My Email" href="mailto:{{ site.email }}">
+            <img src="{{ '/assets/img/envelope.svg' | prepend: site.baseurl }}" alt="My Email">
+            <div><span>{{ site.email }}</span></div>
+          </a></li>
+        {% endif %}
+        {% if site.linkedin_url %}
+          <li><a aria-label="My LinkedIn" href="{{ site.linkedin_url }}" target="_blank" rel="noreferrer">
+            <img src="{{ '/assets/img/linkedin.svg' | prepend: site.baseurl }}" alt="My LinkedIn">
+            <div><span>LinkedIn</span></div>
+          </a></li>
+        {% endif %}
+        {% if site.github_username %}
+          <li><a aria-label="My Github" href="https://github.com/{{ site.github_username }}">
+            <img src="{{ '/assets/img/github.svg' | prepend: site.baseurl }}" alt="My Github">
+            <div><span>@{{ site.github_username }}</span></div>
+          </a></li>
+        {% endif %}
+        {% if site.cv_url %}
+          <li><a aria-label="My CV" href="{{ site.cv_url | prepend: site.baseurl }}" target="_blank" rel="noreferrer">
+            <img src="{{ '/assets/img/file-pdf.svg' | prepend: site.baseurl }}" alt="My CV">
+            <div><span>CV</span></div>
+          </a></li>
+        {% endif %}
+        
+      </ul>
+    </div>
+    <div class="name-zone">
+      <h1>{{ site.name }}</h1>
+      <h2>{{ site.job }}</h2>
+    </div>
+  </div>
+  <div id="contents">
+    <ul>
+      {% for subject in meta %}
+        <li class="subject" id="{{ subject.subject }}">
+          <h2 class="subject-name">
+            <div>
+              <img class="subject-icon" src="{{ subject.icon | prepend: site.baseurl }}" alt="{{ subject.subject | prepend: site.baseurl }}">
+            </div>
+            {{ subject.subject }}
+          </h2>
+          <ul>
+              {% for member in subject.contents %}
+              {% if subject.subject == "Projects" %}
+                <!-- Special layout for Projects -->
+                <li class="item project-item">
+                  <div class="project-card">
+                    <div class="project-visual{% unless member.media or member.image or member.demo_video %} no-media{% endunless %}">
+                      {% if member.media %}
+                        <div class="project-gallery">
+                          {% for asset in member.media %}
+                            <figure class="project-gallery-item">
+                              {% if asset.type == "video" %}
+                                {% if asset.src contains '://' %}
+                                  {% assign asset_src = asset.src %}
+                                {% else %}
+                                  {% assign asset_src = asset.src | prepend: site.baseurl %}
+                                {% endif %}
+                                {% if asset.poster %}
+                                  {% if asset.poster contains '://' %}
+                                    {% assign asset_poster = asset.poster %}
+                                  {% else %}
+                                    {% assign asset_poster = asset.poster | prepend: site.baseurl %}
+                                  {% endif %}
+                                {% endif %}
+                                <video
+                                  class="project-video"
+                                  controls
+                                  muted
+                                  playsinline
+                                  preload="metadata"
+                                  {% if asset.poster %}poster="{{ asset_poster }}"{% endif %}
+                                >
+                                  <source src="{{ asset_src }}" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                              {% else %}
+                                {% if asset.src contains '://' %}
+                                  {% assign asset_src = asset.src %}
+                                {% else %}
+                                  {% assign asset_src = asset.src | prepend: site.baseurl %}
+                                {% endif %}
+                                <img src="{{ asset_src }}" alt="{{ asset.alt | default: member.title }}" class="project-image">
+                              {% endif %}
+                              {% if asset.caption %}
+                                <figcaption class="project-media-caption">{{ asset.caption }}</figcaption>
+                              {% endif %}
+                            </figure>
+                          {% endfor %}
+                        </div>
+                      {% elsif member.image or member.demo_video %}
+                        <div class="project-gallery legacy-gallery">
+                          {% if member.image %}
+                            <figure class="project-gallery-item">
+                              <img src="{{ member.image | prepend: site.baseurl }}" alt="{{ member.title }}" class="project-image">
+                            </figure>
+                          {% endif %}
+                          {% if member.demo_video %}
+                            <figure class="project-gallery-item">
+                              <img src="{{ member.demo_video | prepend: site.baseurl }}" alt="{{ member.title }} demo" class="project-image">
+                              <figcaption class="project-media-caption">Demo preview</figcaption>
+                            </figure>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                    <div class="project-content">
+                      <h3 class="project-title">{{ member.title }}</h3>
+                      {% if member.period or member.project_type or member.status %}
+                        <div class="project-meta">
+                          {% if member.period %}
+                            <span class="project-meta-pill">{{ member.period }}</span>
+                          {% endif %}
+                          {% if member.project_type %}
+                            <span class="project-meta-pill">{{ member.project_type }}</span>
+                          {% endif %}
+                          {% if member.status %}
+                            <span class="project-meta-pill">{{ member.status }}</span>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if member.description %}
+                        <p class="project-description">{{ member.description }}</p>
+                      {% endif %}
+                      {% if member.goal %}
+                        <div class="project-detail-block">
+                          <h4 class="project-detail-title">Goal</h4>
+                          <p>{{ member.goal }}</p>
+                        </div>
+                      {% endif %}
+                      {% if member.contribution %}
+                        <div class="project-detail-block">
+                          <h4 class="project-detail-title">My Contribution</h4>
+                          <p>{{ member.contribution }}</p>
+                        </div>
+                      {% endif %}
+                      {% if member.tech_stack %}
+                        <div class="tech-stack">
+                          {% for tech in member.tech_stack %}
+                            <span class="tech-tag">{{ tech }}</span>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                      {% if member.results %}
+                        <div class="project-detail-block">
+                          <h4 class="project-detail-title">Results</h4>
+                          <ul class="project-achievements">
+                            {% for result in member.results %}
+                              <li>{{ result }}</li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% endif %}
+                      {% if member.achievements %}
+                        <div class="project-detail-block">
+                          <h4 class="project-detail-title">Highlights</h4>
+                          <ul class="project-achievements">
+                            {% for achievement in member.achievements %}
+                              <li>{{ achievement }}</li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% endif %}
+                      <div class="project-links">
+                        {% if member.github %}
+                          <a href="{{ member.github }}" target="_blank" class="project-link github-link">
+                            <img src="{{ '/assets/img/github.svg' | prepend: site.baseurl }}" alt="GitHub">
+                            Code
+                          </a>
+                        {% endif %}
+                        {% if member.live_demo %}
+                          <a href="{{ member.live_demo }}" target="_blank" class="project-link demo-link">
+                            <img src="{{ '/assets/img/globe.svg' | prepend: site.baseurl }}" alt="Live Demo">
+                            Demo
+                          </a>
+                        {% endif %}
+                        {% if member.pdf %}
+                          <a href="{{ member.pdf | prepend: site.baseurl }}" target="_blank" class="project-link pdf-link">
+                            <img src="{{ '/assets/img/file-pdf.svg' | prepend: site.baseurl }}" alt="PDF">
+                            PDF
+                          </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              {% else %}
+                <!-- Default layout for other sections -->
+                <li class="item">
+                    <div class="content-header">
+                      {{ member.title | markdownify }}
+                      {% if member.date %}
+                        <span class="content-date">
+                          <img src="{{ '/assets/img/calendar.webp' | prepend: site.baseurl}}" alt="date">
+                          {{ member.date }}
+                        </span>
+                      {% endif %}
+                    </div>
+                    {% for item in member %}
+                      {% if item[0] != "title" and item[0] != "date" %}
+                        {% if item[1].first %}
+                          <ul>
+                            {% for subitem in item[1] %}
+                            <li class="subitem">
+                              {{ subitem | markdownify }}
+                            </li>
+                            {% endfor %}
+                          </ul>
+                        {% else %}
+                          {{ item[1] | markdownify }}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                </li>
+              {% endif %}
+              {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+      </ul>
+  </div>
+  <div id="footer">
+    <span>
+      Copyright © 2024 | <a href="https://github.com/byanko55">Yankos</a>
+    </span>
+  </div>
+</body>
+<script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
+</html>

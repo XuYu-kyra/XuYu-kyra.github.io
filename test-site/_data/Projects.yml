@@ -1,0 +1,125 @@
+subject: Projects
+listing-order: 3
+icon: "/assets/img/clipboard-list.svg"
+contents:
+  - title: "ROS 2 Vision System for Mobile Manipulation"
+    type: "featured-project"
+    period: "Jan 2026 - May 2026"
+    project_type: "Team Robotics Project"
+    status: "completed"
+    tech_stack: ["ROS 2 Jazzy", "Python", "OpenCV", "NumPy", "vision_msgs", "RViz", "RGB-D Perception"]
+    description: "Developed the vision subsystem for a mobile manipulation platform that supports white-bin search, colored block detection, 3D localization, and pick-and-place integration."
+    goal: "Build a ROS 2 perception pipeline that detects bins and colored blocks from RGB-D camera data, estimates their 3D poses, and provides reliable outputs for navigation and manipulation."
+    contribution: "I was responsible for the vision module in the team project. I implemented HSV-based blob detection, RGB-D projection into 3D, object classification for blocks and bins, temporal smoothing for stable detections, and RViz/debug tools to support system testing and integration."
+    results:
+      - "Published 2D detections and 3D object poses for downstream robotic tasks"
+      - "Separated search mode white-bin detection from manipulation mode multi-color detection"
+      - "Improved robustness with multi-frame confirmation and exponential moving average smoothing"
+      - "Added debugging nodes for terminal summaries, RViz markers, and annotated images"
+    achievements:
+      - "Designed a modular ROS 2 package structure with launch files for different operating stages"
+      - "Used aligned depth images and camera intrinsics to estimate object position and yaw"
+      - "Implemented lightweight tracking logic to reduce false positives in noisy scenes"
+      - "Documented the package clearly for reuse and future extension in the team system"
+    media:
+      - type: "image"
+        src: "/assets/videos/robot.gif"
+        caption: "Robot system demo"
+      - type: "image"
+        src: "/assets/videos/r1.png"
+        caption: "ROS 2 vision package structure"
+    github: "https://github.com/Picklerick313/AERO62520_Robotic_Systems_Design_Project"
+    live_demo: "https://github.com/Picklerick313/AERO62520_Robotic_Systems_Design_Project/tree/main/Xy"
+
+  - title: "RAG-based Historical Character Dialogue System"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Dec 2024 - May 2025"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["Python", "BeautifulSoup", "BERT", "RoBERTa", "Weaviate", "Flask", "DeepSeek API", "GPT-SoVITS", "HTML/CSS/JavaScript"]
+    description: "Developed an intelligent dialogue system enabling realistic interactions with historical figure Sun Ce by integrating language modeling, knowledge retrieval, and speech synthesis technologies."
+    achievements:
+      - "Built multi-source data pipeline by crawling and cleaning content from historical texts with alias disambiguation"
+      - "Created knowledge retrieval system using SentenceTransformer, achieving 30% latency reduction under high concurrency"
+      - "Designed RAG pipeline with role-specific prompt templates for historically accurate responses"
+      - "Integrated GPT-SoVITS for real-time text-to-speech conversion"
+      - "Developed responsive web interface with user feedback mechanisms"
+    media:
+      - type: "image"
+        src: "/assets/img/sc.png"
+        caption: "Project interface overview"
+      - type: "image"
+        src: "/assets/videos/demo.gif"
+        caption: "Dialogue system demo"
+      - type: "image"
+        src: "/assets/videos/rag1.png"
+        caption: "Repository structure and backend modules"
+    github: "https://github.com/XuYu-kyra/Rag_dialogue_sc"
+    live_demo: "https://github.com/XuYu-kyra/Rag_dialogue_sc/blob/main/static/final.mp4"
+  
+  - title: "PetCare AI - Intelligent Veterinary Dialogue System"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Jun 2023 - Jul 2024"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["Django", "BERT", "GPT-3", "SparkAI", "jieba", "scikit-learn"]
+    description: "Led development of an AI-powered dialogue system simulating conversations between pet doctors and users through natural language processing."
+    achievements:
+      - "Architected backend logic using Django for request handling and database management"
+      - "Implemented NLP capabilities using BERT and GPT-3 for context-aware responses"
+      - "Applied jieba for Chinese word segmentation and text processing"
+      - "Designed scalable system architecture supporting user personalization"
+    media:
+      - type: "image"
+        src: "/assets/img/pet.png"
+        caption: "PetCare AI project cover"
+      - type: "image"
+        src: "/assets/videos/pet1.png"
+        caption: "Project structure overview"
+    github: "https://github.com/XuYu-kyra/PetCare_AI"
+    live_demo: "https://github.com/XuYu-kyra/PetCare_AI"
+  
+  - title: "Let's Buy - AI-Driven Senior Shopping Platform"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Apr 2023 - Jun 2024"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["KNN", "Collaborative Filtering", "Content-based Algorithms"]
+    description: "Developed an AI-powered online clothing platform specifically designed for elderly users (55-85 years)."
+    achievements:
+      - "Implemented KNN model for personalized clothing size recommendations"
+      - "Prepared training data by collecting and cleaning senior clothing size charts"
+      - "Optimized model performance through cross-validation and hyperparameter tuning"
+      - "Enhanced recommendation accuracy using advanced filtering algorithms"
+    media:
+      - type: "image"
+        src: "/assets/videos/project-demo.gif"
+        caption: "Virtual try-on demo"
+      - type: "image"
+        src: "/assets/videos/buy1.png"
+        caption: "Mini-program and backend structure"
+    github: "https://github.com/XuYu-kyra/LB"
+    live_demo: "https://github.com/XuYu-kyra/LB/blob/main/%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4"
+  
+  - title: "Facial Expression Music Recommendation System"
+    type: "featured-project"  # 特殊类型，用于特殊样式
+    period: "Feb 2023 - Apr 2024"
+    project_type: "Personal Project"
+    status: "completed"
+    tech_stack: ["OpenCV", "DeepFace", "LeNet", "AlexNet", "Sentiment Analysis"]
+    description: "Created a personalized music recommendation system utilizing facial expression recognition for emotion-aware music selection."
+    achievements:
+      - "Built facial expression recognition system using OpenCV and DeepFace"
+      - "Processed and analyzed lyrics data through advanced NLP techniques"
+      - "Implemented emotion labeling using sentiment dictionaries"
+      - "Developed integrated emotion-to-music recommendation logic"
+    media:
+      - type: "image"
+        src: "/assets/img/1.png"
+        caption: "Application overview"
+      - type: "image"
+        src: "/assets/videos/facial1.png"
+        caption: "Django project structure and modules"
+    github: "https://github.com/XuYu-kyra/Facial_music"
+    live_demo: "https://github.com/XuYu-kyra/Facial_music"
+  

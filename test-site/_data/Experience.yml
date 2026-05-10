@@ -1,0 +1,5 @@
+subject: About me
+listing-order: 2
+icon: "/assets/img/briefcase.svg"
+contents:
+  - bio: An MSc Robotics student at the University of Manchester with a background in Software Engineering and an exchange in Computer Science at The University of Hong Kong. I am seeking graduate opportunities in robotics, AI, computer vision, and software engineering, with interests in building reliable intelligent systems that connect perception, decision-making, and user-facing applications. My experience spans ROS 2 robotics, computer vision, NLP, and full-stack development, and I am comfortable taking projects from data processing and model development through system integration, testing, and deployment. I enjoy collaborative engineering work, communicate well across multidisciplinary teams, and bring a practical, product-oriented mindset to technical problem solving.
