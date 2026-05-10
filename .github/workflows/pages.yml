@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: test-site
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,14 +25,17 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.1"
-          bundler-cache: true
-          working-directory: test-site
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Install dependencies
+        working-directory: test-site
+        run: bundle install
+
       - name: Build with Jekyll
+        working-directory: test-site
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
