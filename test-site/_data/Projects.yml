@@ -22,9 +22,9 @@ contents:
       - "Implemented lightweight tracking logic to reduce false positives in noisy scenes"
       - "Documented the package clearly for reuse and future extension in the team system"
     media:
-      - type: "image"
-        src: "/assets/videos/robot.gif"
-        caption: "Robot system demo"
+      - type: "video"
+        src: "/assets/videos/main_pipeline_manual_active.mp4"
+        caption: "Robot system proof video"
       - type: "image"
         src: "/assets/videos/r1.png"
         caption: "ROS 2 vision package structure"
