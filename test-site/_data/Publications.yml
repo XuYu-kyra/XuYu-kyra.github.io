@@ -1,9 +1,15 @@
 subject: Research Interests
+subject_zh: 研究兴趣
 listing-order: 4
 icon: "/assets/img/flask.svg"
 contents:
   - title: Retrieval-Augmented Generation and Large Language Models for Character Personality Modeling and Dialogue Systems
+    title_zh: 检索增强生成（RAG）与大语言模型在人物性格建模及对话系统中的应用
   - title: Multimodal Human-Robot Interaction and Cognitive Robotics
+    title_zh: 多模态人机交互与认知机器人
   - title: Computer Vision for Affective Computing, Behavior Analysis, and Robotic Environmental Perception
+    title_zh: 面向情感计算、行为分析与机器人环境感知的计算机视觉
   - title: Personalized Recommendation Algorithms based on User State (e.g., Expression, Behavior) and Preference
+    title_zh: 基于用户状态（如表情、行为）与偏好的个性化推荐算法
   - title: Robot Reinforcement Learning and Autonomous Mobile Systems
+    title_zh: 机器人强化学习与自主移动系统

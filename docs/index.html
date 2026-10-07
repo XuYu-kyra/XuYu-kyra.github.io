@@ -27,9 +27,21 @@
   <link rel="shortcut icon" type="image/png" href="/assets/img/icon.webp">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script>
+    try {
+      document.documentElement.lang = localStorage.getItem('portfolio-language') === 'zh' ? 'zh-CN' : 'en';
+    } catch (error) {
+      document.documentElement.lang = 'en';
+    }
+  </script>
 </head>
 
 <body>
+  <div class="language-switcher" role="group" aria-label="Language / 语言">
+    <button type="button" class="language-option" data-language="en" aria-pressed="true">English</button>
+    <span aria-hidden="true">/</span>
+    <button type="button" class="language-option" data-language="zh" aria-pressed="false">中文</button>
+  </div>
   <div id="sidebar">
     <ul class="toc-box"></ul>
   </div>
@@ -97,7 +109,7 @@
                 <!-- Default layout for other sections -->
                 <li class="item">
                     <div class="content-header">
-                      <p>The University of Manchester, Msc in Robotics</p>
+                      <p>The University of Manchester, MSc in Robotics</p>
 
                       
                         <span class="content-date">
@@ -118,7 +130,7 @@
                 <!-- Default layout for other sections -->
                 <li class="item">
                     <div class="content-header">
-                      <p>The University of Hongkong, BEng in Computer Science, Exchange</p>
+                      <p>The University of Hong Kong, BEng in Computer Science, Exchange</p>
 
                       
                         <span class="content-date">

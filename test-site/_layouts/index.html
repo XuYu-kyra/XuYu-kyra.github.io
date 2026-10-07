@@ -17,49 +17,63 @@
   <link rel="shortcut icon" type="image/png" href="{{ site.icon_img | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script>
+    try {
+      if (localStorage.getItem('portfolio-language') === 'zh') {
+        document.documentElement.lang = 'zh-CN';
+      }
+    } catch (error) {
+      // The site remains in English when browser storage is unavailable.
+    }
+  </script>
 </head>
 
 <body>
+  <div class="language-switcher" role="group" aria-label="Language / 语言">
+    <button type="button" class="language-option" data-language="en" aria-pressed="true">English</button>
+    <span aria-hidden="true">/</span>
+    <button type="button" class="language-option" data-language="zh" aria-pressed="false">中文</button>
+  </div>
   <div id="sidebar">
     <ul class="toc-box"></ul>
   </div>
   <div id="about">
     <div class="profile-zone">
-      <img class="profile-img" src="{{ site.profile_img | prepend: site.baseurl }}" alt="My Photo">
+      <img class="profile-img" src="{{ site.profile_img | prepend: site.baseurl }}" alt="Portrait of Yu Xu / 徐宇个人照片">
       <ul class="personal-info">
         {% if site.phone_number %}
-        <li><a aria-label="My Phone">
-          <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}" alt="My Phone Number">
+        <li><a aria-label="Phone / 电话">
+          <img src="{{ '/assets/img/phone.svg' | prepend: site.baseurl }}" alt="Phone / 电话">
           <div><span>{{ site.phone_number }}</span></div>
         </a></li>
         {% endif %}
         {% if site.address %}
-        <li><a aria-label="My Address" href="https://www.google.com/maps/search/{{ site.address }}">
-          <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}" alt="My Address">
+        <li><a aria-label="Address / 地址" href="https://www.google.com/maps/search/{{ site.address }}">
+          <img src="{{ '/assets/img/location-dot.svg' | prepend: site.baseurl }}" alt="Address / 地址">
           <div><span>{{ site.address }}</span></div>
         </a></li>
         {% endif %}
         {% if site.email %}
-          <li><a aria-label="My Email" href="mailto:{{ site.email }}">
-            <img src="{{ '/assets/img/envelope.svg' | prepend: site.baseurl }}" alt="My Email">
+          <li><a aria-label="Email / 邮箱" href="mailto:{{ site.email }}">
+            <img src="{{ '/assets/img/envelope.svg' | prepend: site.baseurl }}" alt="Email / 邮箱">
             <div><span>{{ site.email }}</span></div>
           </a></li>
         {% endif %}
         {% if site.linkedin_url %}
-          <li><a aria-label="My LinkedIn" href="{{ site.linkedin_url }}" target="_blank" rel="noreferrer">
-            <img src="{{ '/assets/img/linkedin.svg' | prepend: site.baseurl }}" alt="My LinkedIn">
+          <li><a aria-label="LinkedIn" href="{{ site.linkedin_url }}" target="_blank" rel="noreferrer">
+            <img src="{{ '/assets/img/linkedin.svg' | prepend: site.baseurl }}" alt="LinkedIn">
             <div><span>LinkedIn</span></div>
           </a></li>
         {% endif %}
         {% if site.github_username %}
-          <li><a aria-label="My Github" href="https://github.com/{{ site.github_username }}">
-            <img src="{{ '/assets/img/github.svg' | prepend: site.baseurl }}" alt="My Github">
+          <li><a aria-label="GitHub" href="https://github.com/{{ site.github_username }}">
+            <img src="{{ '/assets/img/github.svg' | prepend: site.baseurl }}" alt="GitHub">
             <div><span>@{{ site.github_username }}</span></div>
           </a></li>
         {% endif %}
         {% if site.cv_url %}
-          <li><a aria-label="My CV" href="{{ site.cv_url | prepend: site.baseurl }}" target="_blank" rel="noreferrer">
-            <img src="{{ '/assets/img/file-pdf.svg' | prepend: site.baseurl }}" alt="My CV">
+          <li><a aria-label="CV / 简历" href="{{ site.cv_url | prepend: site.baseurl }}" target="_blank" rel="noreferrer">
+            <img src="{{ '/assets/img/file-pdf.svg' | prepend: site.baseurl }}" alt="CV / 简历">
             <div><span>CV</span></div>
           </a></li>
         {% endif %}
@@ -74,12 +88,13 @@
   <div id="contents">
     <ul>
       {% for subject in meta %}
-        <li class="subject" id="{{ subject.subject }}">
+        <li class="subject" id="{{ subject.subject | slugify }}">
           <h2 class="subject-name">
             <div>
-              <img class="subject-icon" src="{{ subject.icon | prepend: site.baseurl }}" alt="{{ subject.subject | prepend: site.baseurl }}">
+              <img class="subject-icon" src="{{ subject.icon | prepend: site.baseurl }}" alt="">
             </div>
-            {{ subject.subject }}
+            <span class="lang-en">{{ subject.subject }}</span>
+            <span class="lang-zh">{{ subject.subject_zh | default: subject.subject }}</span>
           </h2>
           <ul>
               {% for member in subject.contents %}
@@ -114,7 +129,7 @@
                                   {% if asset.poster %}poster="{{ asset_poster }}"{% endif %}
                                 >
                                   <source src="{{ asset_src }}" type="video/mp4">
-                                  Your browser does not support the video tag.
+                                  Your browser does not support the video tag. / 当前浏览器不支持视频播放。
                                 </video>
                               {% else %}
                                 {% if asset.src contains '://' %}
@@ -122,10 +137,13 @@
                                 {% else %}
                                   {% assign asset_src = asset.src | prepend: site.baseurl %}
                                 {% endif %}
-                                <img src="{{ asset_src }}" alt="{{ asset.alt | default: member.title }}" class="project-image">
+                                <img src="{{ asset_src }}" alt="{{ asset.alt | default: member.title }} / {{ asset.alt_zh | default: member.title_zh }}" class="project-image">
                               {% endif %}
                               {% if asset.caption %}
-                                <figcaption class="project-media-caption">{{ asset.caption }}</figcaption>
+                                <figcaption class="project-media-caption">
+                                  <span class="lang-en">{{ asset.caption }}</span>
+                                  <span class="lang-zh">{{ asset.caption_zh | default: asset.caption }}</span>
+                                </figcaption>
                               {% endif %}
                             </figure>
                           {% endfor %}
@@ -134,46 +152,64 @@
                         <div class="project-gallery legacy-gallery">
                           {% if member.image %}
                             <figure class="project-gallery-item">
-                              <img src="{{ member.image | prepend: site.baseurl }}" alt="{{ member.title }}" class="project-image">
+                              <img src="{{ member.image | prepend: site.baseurl }}" alt="{{ member.title }} / {{ member.title_zh }}" class="project-image">
                             </figure>
                           {% endif %}
                           {% if member.demo_video %}
                             <figure class="project-gallery-item">
-                              <img src="{{ member.demo_video | prepend: site.baseurl }}" alt="{{ member.title }} demo" class="project-image">
-                              <figcaption class="project-media-caption">Demo preview</figcaption>
+                              <img src="{{ member.demo_video | prepend: site.baseurl }}" alt="{{ member.title }} demo / {{ member.title_zh }}演示" class="project-image">
+                              <figcaption class="project-media-caption">
+                                <span class="lang-en">Demo preview</span>
+                                <span class="lang-zh">演示预览</span>
+                              </figcaption>
                             </figure>
                           {% endif %}
                         </div>
                       {% endif %}
                     </div>
                     <div class="project-content">
-                      <h3 class="project-title">{{ member.title }}</h3>
+                      <h3 class="project-title">
+                        <span class="lang-en">{{ member.title }}</span>
+                        <span class="lang-zh">{{ member.title_zh | default: member.title }}</span>
+                      </h3>
                       {% if member.period or member.project_type or member.status %}
                         <div class="project-meta">
                           {% if member.period %}
-                            <span class="project-meta-pill">{{ member.period }}</span>
+                            <span class="project-meta-pill">
+                              <span class="lang-en">{{ member.period }}</span>
+                              <span class="lang-zh">{{ member.period_zh | default: member.period }}</span>
+                            </span>
                           {% endif %}
                           {% if member.project_type %}
-                            <span class="project-meta-pill">{{ member.project_type }}</span>
+                            <span class="project-meta-pill">
+                              <span class="lang-en">{{ member.project_type }}</span>
+                              <span class="lang-zh">{{ member.project_type_zh | default: member.project_type }}</span>
+                            </span>
                           {% endif %}
                           {% if member.status %}
-                            <span class="project-meta-pill">{{ member.status }}</span>
+                            <span class="project-meta-pill">
+                              <span class="lang-en">{{ member.status }}</span>
+                              <span class="lang-zh">{{ member.status_zh | default: member.status }}</span>
+                            </span>
                           {% endif %}
                         </div>
                       {% endif %}
                       {% if member.description %}
-                        <p class="project-description">{{ member.description }}</p>
+                        <p class="project-description">
+                          <span class="lang-en">{{ member.description }}</span>
+                          <span class="lang-zh">{{ member.description_zh | default: member.description }}</span>
+                        </p>
                       {% endif %}
                       {% if member.goal %}
                         <div class="project-detail-block">
-                          <h4 class="project-detail-title">Goal</h4>
-                          <p>{{ member.goal }}</p>
+                          <h4 class="project-detail-title"><span class="lang-en">Goal</span><span class="lang-zh">项目目标</span></h4>
+                          <p><span class="lang-en">{{ member.goal }}</span><span class="lang-zh">{{ member.goal_zh | default: member.goal }}</span></p>
                         </div>
                       {% endif %}
                       {% if member.contribution %}
                         <div class="project-detail-block">
-                          <h4 class="project-detail-title">My Contribution</h4>
-                          <p>{{ member.contribution }}</p>
+                          <h4 class="project-detail-title"><span class="lang-en">My Contribution</span><span class="lang-zh">个人贡献</span></h4>
+                          <p><span class="lang-en">{{ member.contribution }}</span><span class="lang-zh">{{ member.contribution_zh | default: member.contribution }}</span></p>
                         </div>
                       {% endif %}
                       {% if member.tech_stack %}
@@ -185,9 +221,15 @@
                       {% endif %}
                       {% if member.results %}
                         <div class="project-detail-block">
-                          <h4 class="project-detail-title">Results</h4>
-                          <ul class="project-achievements">
+                          <h4 class="project-detail-title"><span class="lang-en">Results</span><span class="lang-zh">项目成果</span></h4>
+                          <ul class="project-achievements lang-en">
                             {% for result in member.results %}
+                              <li>{{ result }}</li>
+                            {% endfor %}
+                          </ul>
+                          <ul class="project-achievements lang-zh">
+                            {% assign translated_results = member.results_zh | default: member.results %}
+                            {% for result in translated_results %}
                               <li>{{ result }}</li>
                             {% endfor %}
                           </ul>
@@ -195,9 +237,15 @@
                       {% endif %}
                       {% if member.achievements %}
                         <div class="project-detail-block">
-                          <h4 class="project-detail-title">Highlights</h4>
-                          <ul class="project-achievements">
+                          <h4 class="project-detail-title"><span class="lang-en">Highlights</span><span class="lang-zh">项目亮点</span></h4>
+                          <ul class="project-achievements lang-en">
                             {% for achievement in member.achievements %}
+                              <li>{{ achievement }}</li>
+                            {% endfor %}
+                          </ul>
+                          <ul class="project-achievements lang-zh">
+                            {% assign translated_achievements = member.achievements_zh | default: member.achievements %}
+                            {% for achievement in translated_achievements %}
                               <li>{{ achievement }}</li>
                             {% endfor %}
                           </ul>
@@ -207,13 +255,13 @@
                         {% if member.github %}
                           <a href="{{ member.github }}" target="_blank" class="project-link github-link">
                             <img src="{{ '/assets/img/github.svg' | prepend: site.baseurl }}" alt="GitHub">
-                            Code
+                            <span class="lang-en">Code</span><span class="lang-zh">源代码</span>
                           </a>
                         {% endif %}
                         {% if member.live_demo %}
                           <a href="{{ member.live_demo }}" target="_blank" class="project-link demo-link">
                             <img src="{{ '/assets/img/globe.svg' | prepend: site.baseurl }}" alt="Live Demo">
-                            Demo
+                            <span class="lang-en">Demo</span><span class="lang-zh">演示</span>
                           </a>
                         {% endif %}
                         {% if member.pdf %}
@@ -230,28 +278,45 @@
                 <!-- Default layout for other sections -->
                 <li class="item">
                     <div class="content-header">
-                      {{ member.title | markdownify }}
+                      <div class="content-title lang-en">{{ member.title | markdownify }}</div>
+                      <div class="content-title lang-zh">{{ member.title_zh | default: member.title | markdownify }}</div>
                       {% if member.date %}
-                        <span class="content-date">
+                        <span class="content-date lang-en">
                           <img src="{{ '/assets/img/calendar.webp' | prepend: site.baseurl}}" alt="date">
                           {{ member.date }}
+                        </span>
+                        <span class="content-date lang-zh">
+                          <img src="{{ '/assets/img/calendar.webp' | prepend: site.baseurl}}" alt="日期">
+                          {{ member.date_zh | default: member.date }}
                         </span>
                       {% endif %}
                     </div>
                     {% for item in member %}
+                      {% unless item[0] contains "_zh" %}
                       {% if item[0] != "title" and item[0] != "date" %}
+                        {% assign translated_key = item[0] | append: '_zh' %}
+                        {% assign translated_value = member[translated_key] | default: item[1] %}
                         {% if item[1].first %}
-                          <ul>
+                          <ul class="lang-en">
                             {% for subitem in item[1] %}
                             <li class="subitem">
                               {{ subitem | markdownify }}
                             </li>
                             {% endfor %}
                           </ul>
+                          <ul class="lang-zh">
+                            {% for subitem in translated_value %}
+                            <li class="subitem">
+                              {{ subitem | markdownify }}
+                            </li>
+                            {% endfor %}
+                          </ul>
                         {% else %}
-                          {{ item[1] | markdownify }}
+                          <div class="lang-en">{{ item[1] | markdownify }}</div>
+                          <div class="lang-zh">{{ translated_value | markdownify }}</div>
                         {% endif %}
                       {% endif %}
+                      {% endunless %}
                     {% endfor %}
                 </li>
               {% endif %}
@@ -263,7 +328,7 @@
   </div>
   <div id="footer">
     <span>
-      Copyright © 2024 | <a href="https://github.com/byanko55">Yankos</a>
+      <span class="lang-en">Copyright © 2024</span><span class="lang-zh">版权所有 © 2024</span> | <a href="https://github.com/byanko55">Yankos</a>
     </span>
   </div>
 </body>

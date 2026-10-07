@@ -1,16 +1,29 @@
 subject: Skills
+subject_zh: 专业技能
 listing-order: 5
 icon: "/assets/img/screwdriver-wrench.svg"
 contents:
   - title: Programming Languages
+    title_zh: 编程语言
     description: "Python, C, C++, C#, JavaScript, HTML, CSS, SQL"
+    description_zh: "Python、C、C++、C#、JavaScript、HTML、CSS、SQL"
   - title: Robotics & Middleware
+    title_zh: 机器人技术与中间件
     description: "ROS 2 (Jazzy), RViz, RGB-D perception, vision_msgs, object pose estimation, robot vision pipeline integration"
+    description_zh: "ROS 2（Jazzy）、RViz、RGB-D 感知、vision_msgs、物体位姿估计、机器人视觉流程集成"
   - title: AI / Machine Learning
+    title_zh: 人工智能与机器学习
     description: "BERT, RoBERTa, SentenceTransformers, RAG pipelines, GPT-SoVITS, scikit-learn, TensorFlow, PyTorch, KNN, collaborative filtering, content-based recommendation"
+    description_zh: "BERT、RoBERTa、SentenceTransformers、RAG 流程、GPT-SoVITS、scikit-learn、TensorFlow、PyTorch、KNN、协同过滤、基于内容的推荐"
   - title: Computer Vision & Perception
+    title_zh: 计算机视觉与感知
     description: "OpenCV, DeepFace, HSV color segmentation, blob detection, facial expression recognition, depth projection, multi-frame smoothing"
+    description_zh: "OpenCV、DeepFace、HSV 颜色分割、斑点检测、面部表情识别、深度投影、多帧平滑"
   - title: Web & Application Development
+    title_zh: Web 与应用开发
     description: "Flask, Django, Streamlit, Jekyll, responsive front-end development, REST-style application workflows"
+    description_zh: "Flask、Django、Streamlit、Jekyll、响应式前端开发、REST 风格应用流程"
   - title: Data & Tools
+    title_zh: 数据与开发工具
     description: "Weaviate, BeautifulSoup, Git, GitHub, Linux, AWS, Unity, Maya, After Effects"
+    description_zh: "Weaviate、BeautifulSoup、Git、GitHub、Linux、AWS、Unity、Maya、After Effects"

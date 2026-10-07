@@ -1,10 +1,17 @@
 subject: Education
+subject_zh: 教育经历
 listing-order: 1
 icon: "/assets/img/graduation-cap.svg"
 contents:
-  - title: The University of Manchester, Msc in Robotics
+  - title: The University of Manchester, MSc in Robotics
+    title_zh: 曼彻斯特大学，机器人学硕士
     date: Sep. 2025 - Now
-  - title: The University of Hongkong, BEng in Computer Science, Exchange
+    date_zh: 2025年9月—至今
+  - title: The University of Hong Kong, BEng in Computer Science, Exchange
+    title_zh: 香港大学，计算机科学本科交换项目
     date: Sep. 2024 - Jan. 2025
+    date_zh: 2024年9月—2025年1月
   - title: Xiamen University, BEng in Digital Media Technology
+    title_zh: 厦门大学，数字媒体技术工学学士
     date: Sep. 2021 - June. 2025
+    date_zh: 2021年9月—2025年6月

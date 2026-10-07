@@ -1,7 +1,11 @@
 subject: Languages
+subject_zh: 语言能力
 listing-order: 7
 icon: "/assets/img/globe.svg"
 contents:
   - title: "Mandarin ('*Native*'): <span style='color: goldenrod; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
+    title_zh: "普通话（'*母语*'）：<span style='color: goldenrod; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
   - title: "Cantonese ('*Native*'): <span style='color: indianred; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
+    title_zh: "粤语（'*母语*'）：<span style='color: indianred; margin: auto 8px; font-family: cursive;'>●●●●●</span>"
   - title: "English: <span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●◐○</span>"
+    title_zh: "英语：<span style='color: cornflowerblue; margin: auto 8px; font-family: cursive;'>●●●◐○</span>"
