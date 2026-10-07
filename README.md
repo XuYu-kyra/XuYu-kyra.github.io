@@ -1,24 +1,35 @@
-# Yu Xu — Data-Driven Portfolio & CV Site
+# Yu Xu — Portfolio & CV Site
 
-[English](#english) · [中文](#中文) · [Live site](https://xuyu-kyra.github.io/)
+[Live site](https://xuyu-kyra.github.io/) · [English](#english) · [中文](#中文)
+
+**Stack:** Jekyll · GitHub Pages · Liquid · YAML · SCSS · JavaScript · GitHub Pages SEO/feed/sitemap plugins
 
 ## English
 
-This repository is the source of my GitHub Pages portfolio and CV site. I turned a static resume into a data-driven Jekyll application so that project stories, evidence, media, and profile metadata can evolve without rewriting the page layout.
+This repository powers my personal portfolio and CV site. The site keeps profile and project content in YAML, while the layout, project cards, media handling, and responsive behaviour live in reusable Jekyll components.
 
-### The story
+### What I customised
 
-A portfolio should do more than list technologies. It should help a reviewer move from “what did this person build?” to “what decisions did they own, and can I inspect the evidence?”. I designed the site around that reading path: structured sections for education, experience, research interests, skills, and projects; project cards with outcomes, technology badges, images/videos, and code/demo links; and a responsive layout that remains usable on a phone.
+- Structured education, experience, research, skills, languages, publications, and projects as `_data/*.yml` content.
+- Extended project cards with descriptions, achievements, technology badges, images, video previews, source links, live demos, and optional PDF links.
+- Built responsive SCSS for desktop and mobile layouts, with shared theme tokens and accessible HTML semantics.
+- Added a lightweight JavaScript table of contents and scroll-reveal behaviour for longer pages.
+- Configured the GitHub Pages build, SEO/feed/sitemap plugins, local Bundler workflow, and downloadable CV assets.
 
-### What I built
+### Repository layout
 
-- A Jekyll/GitHub Pages site using `_data/*.yml` as the content model.
-- A custom project-card component that supports media galleries, video previews, technology badges, achievements, GitHub links, live demos, and optional PDF links.
-- Responsive SCSS for desktop and mobile layouts, with reusable theme tokens and accessible semantics.
-- A lightweight JavaScript table of contents and scroll-reveal interaction for long-form portfolio reading.
-- GitHub Pages build configuration, feed/SEO/sitemap plugins, local development instructions, and a PDF CV asset.
+```text
+docs/
+  _config.yml          site/profile metadata
+  _data/               portfolio content
+  _layouts/            page composition
+  _includes/           reusable view fragments
+  assets/css/          SCSS and theme rules
+  assets/js/           table of contents and interactions
+  assets/img|videos/   project media
+```
 
-### Local development
+### Edit and run locally
 
 ```bash
 cd docs
@@ -26,40 +37,28 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Open `http://localhost:4000`. Edit profile metadata in `_config.yml` and project content in `_data/Projects.yml`; keep media under `assets/img/` or `assets/videos/`.
+Open `http://localhost:4000`. Update site metadata in `docs/_config.yml`, project content in `docs/_data/Projects.yml`, and media under `docs/assets/`.
 
-### Why it matters in a hiring context
+### Attribution
 
-This project demonstrates front-end implementation, content modelling, responsive UI, build/deployment hygiene, and the product judgment to make technical work legible to a non-specialist reviewer. The portfolio is itself an interface for evidence.
+This site is based on [Yankos/byanko55's `jekyll-professional-resume`](https://github.com/byanko55/jekyll-professional-resume), released under the MIT License. The original author and licence are preserved in [`docs/jekyll-professional-resume.gemspec`](docs/jekyll-professional-resume.gemspec) and [`docs/LICENSE`](docs/LICENSE). My work is the portfolio content model, project/media presentation, styling, interactions, and site-specific configuration described above.
 
 ## 中文
 
-这是我的 GitHub Pages 个人作品集与简历网站源码。我没有把简历写死在一个 HTML 页面里，而是把教育经历、工作经历、研究兴趣、技能和项目内容抽象成 `_data/*.yml` 数据模型，让内容迭代不需要反复改布局。
+这是我的个人作品集与在线简历网站源码。内容保存在 YAML 中，页面结构、项目卡片、媒体展示和响应式行为则由可复用的 Jekyll 组件负责，因此更新项目经历时不需要反复改页面布局。
 
-### 项目故事
+### 我做的定制
 
-作品集不应该只是技术名词列表，更应该让招聘者顺着页面回答三个问题：我做了什么、我主导了哪些关键决策、证据在哪里。为此我设计了数据驱动的项目卡片、媒体展示、技术标签、成果描述、GitHub/演示链接和响应式阅读路径。
-
-### 我的主导工作
-
-- 基于 Jekyll/GitHub Pages 建立数据驱动站点；
-- 实现支持图片、视频、技术 badge、成果、源码、在线演示和 PDF 链接的项目卡片组件；
-- 编写桌面端/移动端 SCSS 和可复用主题变量，兼顾响应式布局与可访问性；
-- 用轻量 JavaScript 生成目录并实现滚动阅读反馈；
-- 配置 GitHub Pages 构建、feed、SEO、sitemap、Bundler 本地开发流程和 PDF 简历资源。
+- 把教育、经历、研究方向、技能、语言、发表内容和项目整理为 `_data/*.yml`；
+- 扩展项目卡片，支持简介、成果、技术标签、图片、视频预览、源码、在线演示和可选 PDF；
+- 编写桌面端/移动端 SCSS，统一主题变量并保留可访问的 HTML 语义；
+- 用轻量 JavaScript 生成目录和滚动反馈；
+- 配置 GitHub Pages 构建、SEO/feed/sitemap、本地 Bundler 流程和简历资源。
 
 ### 本地运行
 
-```bash
-cd docs
-bundle install
-bundle exec jekyll serve --livereload
-```
+在 `docs/` 目录执行上面的 Bundler/Jekyll 命令，然后访问 `http://localhost:4000`。站点信息位于 `docs/_config.yml`，项目内容位于 `docs/_data/Projects.yml`，媒体资源位于 `docs/assets/`。
 
-打开 `http://localhost:4000`。个人信息在 `_config.yml`，项目内容在 `_data/Projects.yml`，图片和视频分别放在 `assets/img/` 与 `assets/videos/`。
+### 模板来源
 
-### 求职价值
-
-这个项目体现的不只是 Jekyll，而是前端实现、内容建模、响应式交互、构建部署和信息表达能力：我把复杂技术项目重新组织成招聘者可以快速理解、继续验证的证据界面。
-
-许可证：MIT。
+本站基于 [Yankos/byanko55 的 `jekyll-professional-resume`](https://github.com/byanko55/jekyll-professional-resume) 修改，原项目采用 MIT License。原作者与许可证信息保留在 [`docs/jekyll-professional-resume.gemspec`](docs/jekyll-professional-resume.gemspec) 和 [`docs/LICENSE`](docs/LICENSE)。我的工作主要是内容模型、项目/媒体展示、样式、交互和本站配置。
