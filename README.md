@@ -19,29 +19,30 @@ This repository powers my personal portfolio and CV site. The site keeps profile
 ### Repository layout
 
 ```text
-docs/
+test-site/
   _config.yml          site/profile metadata
   _data/               portfolio content
   _layouts/            page composition
-  _includes/           reusable view fragments
   assets/css/          SCSS and theme rules
   assets/js/           table of contents and interactions
   assets/img|videos/   project media
+
+docs/                  generated GitHub Pages output
 ```
 
 ### Edit and run locally
 
 ```bash
-cd docs
+cd test-site
 bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Open `http://localhost:4000`. Update site metadata in `docs/_config.yml`, project content in `docs/_data/Projects.yml`, and media under `docs/assets/`.
+Open `http://localhost:4000`. Update site metadata in `test-site/_config.yml`, project content in `test-site/_data/Projects.yml`, and media under `test-site/assets/`. The `docs/` directory contains generated site output rather than the editable YAML/Liquid source.
 
 ### Attribution
 
-This site is based on [Yankos/byanko55's `jekyll-professional-resume`](https://github.com/byanko55/jekyll-professional-resume), released under the MIT License. The original author and licence are preserved in [`docs/jekyll-professional-resume.gemspec`](docs/jekyll-professional-resume.gemspec) and [`docs/LICENSE`](docs/LICENSE). My work is the portfolio content model, project/media presentation, styling, interactions, and site-specific configuration described above.
+This site is based on [Yankos/byanko55's `jekyll-professional-resume`](https://github.com/byanko55/jekyll-professional-resume), released under the MIT License. The original author and licence are preserved in [`test-site/jekyll-professional-resume.gemspec`](test-site/jekyll-professional-resume.gemspec) and [`test-site/LICENSE`](test-site/LICENSE). My work is the portfolio content model, project/media presentation, styling, interactions, and site-specific configuration described above.
 
 ## 中文
 
@@ -57,8 +58,8 @@ This site is based on [Yankos/byanko55's `jekyll-professional-resume`](https://g
 
 ### 本地运行
 
-在 `docs/` 目录执行上面的 Bundler/Jekyll 命令，然后访问 `http://localhost:4000`。站点信息位于 `docs/_config.yml`，项目内容位于 `docs/_data/Projects.yml`，媒体资源位于 `docs/assets/`。
+在 `test-site/` 目录执行上面的 Bundler/Jekyll 命令，然后访问 `http://localhost:4000`。站点信息位于 `test-site/_config.yml`，项目内容位于 `test-site/_data/Projects.yml`，媒体资源位于 `test-site/assets/`；`docs/` 保存生成后的 GitHub Pages 文件。
 
 ### 模板来源
 
-本站基于 [Yankos/byanko55 的 `jekyll-professional-resume`](https://github.com/byanko55/jekyll-professional-resume) 修改，原项目采用 MIT License。原作者与许可证信息保留在 [`docs/jekyll-professional-resume.gemspec`](docs/jekyll-professional-resume.gemspec) 和 [`docs/LICENSE`](docs/LICENSE)。我的工作主要是内容模型、项目/媒体展示、样式、交互和本站配置。
+本站基于 [Yankos/byanko55 的 `jekyll-professional-resume`](https://github.com/byanko55/jekyll-professional-resume) 修改，原项目采用 MIT License。原作者与许可证信息保留在 [`test-site/jekyll-professional-resume.gemspec`](test-site/jekyll-professional-resume.gemspec) 和 [`test-site/LICENSE`](test-site/LICENSE)。我的工作主要是内容模型、项目/媒体展示、样式、交互和本站配置。
