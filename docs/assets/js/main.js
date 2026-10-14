@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return items.map(function (item) { return '<li>' + item + '</li>'; }).join('');
     }
 
-    const sectionNames = ['教育经历', '关于我', '项目经历', '研究兴趣', '专业技能', '语言能力'];
+    const sectionNames = ['教育经历', '关于我', '硕士论文', '项目经历', '研究兴趣', '专业技能', '语言能力'];
     subjects.forEach(function (subject, index) {
         bindDirectText(subject.querySelector('.subject-name'), sectionNames[index]);
     });
@@ -169,18 +169,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function rebuildTableOfContents() {
+    function rebuildTableOfContents(language) {
         if (!tocbox) return;
         tocbox.replaceChildren();
 
         subjects.forEach(function (subject) {
             const heading = subject.querySelector('.subject-name');
             if (!heading) return;
+            const localizedLabel = heading.querySelector('.lang-' + language);
 
             const tocItem = document.createElement('li');
             const itemLink = document.createElement('a');
             itemLink.classList.add('content-link');
-            itemLink.textContent = heading.textContent.trim();
+            itemLink.textContent = localizedLabel ? localizedLabel.textContent.trim() : heading.textContent.trim();
             itemLink.href = '#' + subject.id;
             itemLink.addEventListener('click', function (event) {
                 event.preventDefault();
@@ -203,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
             button.classList.toggle('active', isActive);
             button.setAttribute('aria-pressed', String(isActive));
         });
-        rebuildTableOfContents();
+        rebuildTableOfContents(selectedLanguage);
 
         if (rememberChoice) saveLanguage(selectedLanguage);
     }
