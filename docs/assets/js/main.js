@@ -196,6 +196,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedLanguage = language === 'zh' ? 'zh' : 'en';
         root.lang = selectedLanguage === 'zh' ? 'zh-CN' : 'en';
 
+        document.querySelectorAll('.lang-en, .lang-zh').forEach(function (element) {
+            const isSelected = element.classList.contains('lang-' + selectedLanguage);
+            element.hidden = !isSelected;
+        });
+
         translations.forEach(function (translation) {
             translation.element.innerHTML = translation[selectedLanguage];
         });
