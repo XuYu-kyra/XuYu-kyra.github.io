@@ -632,3 +632,377 @@ a {
   /* much smaller line height for tighter spacing */
   margin: 0.2rem 0;
   /* reduced vertical gaps between items */ }
+
+
+/* --- Featured MSc dissertation --- */
+.dissertation-item {
+  margin: 0;
+}
+
+.dissertation-card {
+  overflow: hidden;
+  padding: 0;
+  color: var(--font-dark);
+  background: linear-gradient(145deg, #fffdfb 0%, #f4f8f6 55%, #fff8e4 100%);
+  border: 1px solid var(--theme4-light);
+  border-radius: 1rem;
+  box-shadow: 0 8px 28px rgba(61, 114, 93, 0.13);
+}
+
+#contents .dissertation-card p {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.dissertation-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, 0.75fr);
+  gap: 2rem;
+  padding: 2rem;
+  border-bottom: 1px solid rgba(127, 160, 147, 0.35);
+}
+
+.dissertation-kicker,
+.dissertation-section-label,
+.dissertation-system-label {
+  margin: 0 0 0.6rem;
+  color: var(--theme4-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.dissertation-title {
+  margin: 0;
+  max-width: 760px;
+  color: var(--font-dark);
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  line-height: 1.18;
+}
+
+.dissertation-summary {
+  margin: 1rem 0 1.2rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.dissertation-meta,
+.dissertation-metrics,
+.dissertation-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.dissertation-meta {
+  margin-top: 0.85rem;
+}
+
+.dissertation-meta > span {
+  padding: 0.26rem 0.7rem;
+  color: var(--theme4-dark);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--theme4-light);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.dissertation-metrics {
+  margin: 1.15rem 0;
+}
+
+.dissertation-metric {
+  min-width: 118px;
+  padding: 0.75rem 0.85rem;
+  background: #ffffff;
+  border-left: 3px solid var(--theme4-medium);
+  border-radius: 0.45rem;
+  box-shadow: 0 2px 8px rgba(32, 36, 36, 0.06);
+}
+
+.dissertation-metric strong,
+.dissertation-metric span {
+  display: block;
+}
+
+.dissertation-metric strong {
+  color: var(--theme4-dark);
+  font-size: 1.4rem;
+  line-height: 1.1;
+}
+
+.dissertation-metric span {
+  margin-top: 0.2rem;
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+.dissertation-links {
+  margin-top: 1.15rem;
+}
+
+.dissertation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.58rem 0.9rem;
+  color: var(--theme4-dark) !important;
+  background: #ffffff;
+  border: 1px solid var(--theme4-medium);
+  border-radius: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.dissertation-link:hover,
+.dissertation-link:focus-visible {
+  background: var(--theme3-light);
+  box-shadow: 0 4px 12px rgba(61, 114, 93, 0.14);
+  transform: translateY(-1px);
+}
+
+.dissertation-link-primary {
+  color: #ffffff !important;
+  background: var(--theme4-dark);
+  border-color: var(--theme4-dark);
+}
+
+.dissertation-link-primary:hover,
+.dissertation-link-primary:focus-visible {
+  background: #315f4d;
+}
+
+.dissertation-link img {
+  width: 17px !important;
+  height: 17px;
+}
+
+.dissertation-link-primary img {
+  filter: invert(100%);
+}
+
+.dissertation-system {
+  align-self: stretch;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--theme3-medium);
+  border-radius: 0.8rem;
+}
+
+.dissertation-pipeline {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.dissertation-pipeline-step {
+  padding: 0.68rem 0.55rem;
+  color: var(--font-dark);
+  background: #ffffff;
+  border: 1px solid var(--theme4-light);
+  border-radius: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(32, 36, 36, 0.05);
+}
+
+.dissertation-pipeline-step:first-child,
+.dissertation-pipeline-step:last-child {
+  color: #ffffff;
+  background: var(--theme4-dark);
+  border-color: var(--theme4-dark);
+}
+
+.dissertation-pipeline-arrow {
+  align-self: center;
+  padding: 0.2rem;
+  color: var(--theme4-medium);
+  font-size: 1.1rem;
+  font-weight: 700;
+  transform: rotate(90deg);
+}
+
+.dissertation-research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.4rem 2rem;
+}
+
+.dissertation-detail {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--theme3-medium);
+  border-radius: 0.7rem;
+}
+
+.dissertation-detail h4 {
+  margin: 0 0 0.65rem;
+  color: var(--theme4-dark);
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dissertation-detail p,
+.dissertation-list li {
+  font-size: 0.84rem;
+  line-height: 1.62;
+}
+
+.dissertation-detail p {
+  margin: 0;
+}
+
+.dissertation-list {
+  margin: 0 !important;
+  padding-left: 1.15rem;
+}
+
+.dissertation-list li {
+  margin: 0.38rem 0 !important;
+  list-style: disc;
+}
+
+ol.dissertation-list li {
+  list-style: decimal;
+}
+
+.dissertation-results {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.25fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.6rem 2rem 1.8rem;
+  background: rgba(255, 255, 255, 0.58);
+  border-top: 1px solid rgba(127, 160, 147, 0.28);
+  border-bottom: 1px solid rgba(127, 160, 147, 0.28);
+}
+
+.dissertation-result-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.dissertation-result {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) auto;
+  gap: 0.2rem 0.7rem;
+  align-items: baseline;
+  padding: 0.75rem 0.85rem;
+  background: #ffffff;
+  border-radius: 0.55rem;
+  box-shadow: 0 2px 8px rgba(32, 36, 36, 0.06);
+}
+
+.dissertation-result > span {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.dissertation-result strong {
+  color: var(--theme4-dark);
+  font-size: 1.15rem;
+}
+
+.dissertation-result small {
+  grid-column: 1 / -1;
+  color: #5b625f;
+  font-size: 0.75rem;
+}
+
+.dissertation-result-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.dissertation-figure {
+  margin: 0;
+}
+
+#contents .dissertation-figure img {
+  width: 100%;
+  max-width: none;
+  padding: 0.35rem;
+  background: #ffffff;
+  border: 1px solid var(--theme3-medium);
+  border-radius: 0.65rem;
+  box-sizing: border-box;
+}
+
+.dissertation-figure figcaption {
+  margin-top: 0.5rem;
+  color: #5b625f;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.dissertation-tech {
+  padding: 1.2rem 2rem 0.45rem;
+}
+
+.dissertation-attribution {
+  margin: 0 !important;
+  padding: 0.4rem 2rem 1.6rem;
+  color: #5b625f;
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 767px) {
+  .dissertation-hero,
+  .dissertation-results,
+  .dissertation-research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dissertation-hero,
+  .dissertation-results {
+    padding: 1.25rem;
+  }
+
+  .dissertation-research-grid {
+    padding: 1.1rem 1.25rem;
+  }
+
+  .dissertation-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dissertation-metric {
+    min-width: 0;
+    padding: 0.65rem;
+  }
+
+  .dissertation-metric strong {
+    font-size: 1.15rem;
+  }
+
+  .dissertation-links {
+    flex-direction: column;
+  }
+
+  .dissertation-link {
+    justify-content: center;
+  }
+
+  .dissertation-tech {
+    padding: 1rem 1.25rem 0.35rem;
+  }
+
+  .dissertation-attribution {
+    padding: 0.35rem 1.25rem 1.25rem;
+  }
+}
