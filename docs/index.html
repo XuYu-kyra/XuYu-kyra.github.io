@@ -202,6 +202,116 @@
           </ul>
         </li>
       
+        <li class="subject" id="MSc Dissertation">
+          <h2 class="subject-name">
+            <div>
+              <img class="subject-icon" src="/assets/img/flask.svg" alt="">
+            </div>
+            <span class="lang-en">MSc Dissertation</span>
+            <span class="lang-zh">硕士论文</span>
+          </h2>
+          <ul>
+            <li class="item dissertation-item">
+              <article class="dissertation-card">
+                <div class="dissertation-hero">
+                  <div class="dissertation-intro">
+                    <p class="dissertation-kicker"><span class="lang-en">Featured Research · MSc Robotics Dissertation</span><span class="lang-zh">重点研究 · 机器人学硕士论文</span></p>
+                    <h3 class="dissertation-title"><span class="lang-en">Reliability of ROS 2 Navigation under LiDAR Faults</span><span class="lang-zh">LiDAR 故障下的 ROS 2 导航可靠性</span></h3>
+                    <div class="dissertation-meta">
+                      <span>2026</span>
+                      <span class="lang-en">MSc Robotics Dissertation</span><span class="lang-zh">机器人学硕士论文</span>
+                      <span class="lang-en">Completed</span><span class="lang-zh">已完成</span>
+                    </div>
+                    <p class="dissertation-summary"><span class="lang-en">A controlled fault-injection and evaluation framework for tracing how LiDAR degradation propagates through ROS 2 Nav2—from sensing and costmaps to planning, control, robot motion, and mission outcome.</span><span class="lang-zh">构建受控故障注入与评估框架，追踪 LiDAR 数据退化如何通过 ROS 2 Nav2 从感知与代价地图传播至规划、控制、机器人运动和最终任务结果。</span></p>
+                    <div class="dissertation-metrics" aria-label="Research scope / 研究规模">
+                      <div class="dissertation-metric"><strong>216</strong><span class="lang-en">navigation runs</span><span class="lang-zh">次导航运行</span></div>
+                      <div class="dissertation-metric"><strong>108</strong><span class="lang-en">matched pairs</span><span class="lang-zh">组成对实验</span></div>
+                      <div class="dissertation-metric"><strong>9</strong><span class="lang-en">BARN environments</span><span class="lang-zh">个 BARN 环境</span></div>
+                    </div>
+                    <div class="dissertation-links">
+                      <a href="https://github.com/XuYu-kyra/BARNnavigation" target="_blank" rel="noreferrer" class="dissertation-link dissertation-link-primary">
+                        <img src="/assets/img/github.svg" alt="">
+                        <span class="lang-en">View Repository</span><span class="lang-zh">查看代码仓库</span>
+                      </a>
+                      <a href="https://github.com/XuYu-kyra/BARNnavigation/tree/master/dissertation_evidence_index" target="_blank" rel="noreferrer" class="dissertation-link">
+                        <img src="/assets/img/globe.svg" alt="">
+                        <span class="lang-en">Explore Evidence</span><span class="lang-zh">查看实验依据</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="dissertation-system" aria-label="LiDAR fault propagation path">
+                    <p class="dissertation-system-label"><span class="lang-en">Observed propagation path</span><span class="lang-zh">观测到的故障传播链</span></p>
+                    <div class="dissertation-pipeline">
+                      <div class="dissertation-pipeline-step">LiDAR</div><span class="dissertation-pipeline-arrow" aria-hidden="true">→</span>
+                      <div class="dissertation-pipeline-step"><span class="lang-en">Costmaps</span><span class="lang-zh">代价地图</span></div><span class="dissertation-pipeline-arrow" aria-hidden="true">→</span>
+                      <div class="dissertation-pipeline-step"><span class="lang-en">Planning &amp; Control</span><span class="lang-zh">规划与控制</span></div><span class="dissertation-pipeline-arrow" aria-hidden="true">→</span>
+                      <div class="dissertation-pipeline-step"><span class="lang-en">Robot Motion</span><span class="lang-zh">机器人运动</span></div><span class="dissertation-pipeline-arrow" aria-hidden="true">→</span>
+                      <div class="dissertation-pipeline-step"><span class="lang-en">Mission Outcome</span><span class="lang-zh">任务结果</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dissertation-research-grid">
+                  <section class="dissertation-detail">
+                    <h4><span class="lang-en">Problem</span><span class="lang-zh">研究问题</span></h4>
+                    <p><span class="lang-en">A navigation task can still report success while becoming slower, less stable, or more dependent on replanning. Success rate alone can hide meaningful reliability loss.</span><span class="lang-zh">导航任务即使最终成功，也可能变慢、变得不稳定或更加依赖重规划；仅观察成功率会掩盖重要的可靠性损失。</span></p>
+                  </section>
+                  <section class="dissertation-detail">
+                    <h4><span class="lang-en">Method</span><span class="lang-zh">研究方法</span></h4>
+                    <ol class="dissertation-list lang-en">
+                      <li>Injected configurable frontal LiDAR masking and intermittent sector dropout.</li>
+                      <li>Randomised baseline/fault order within matched runs in the same BARN world.</li>
+                      <li>Observed scan behaviour, costmaps, planner/controller activity, velocity commands, motion, and mission outcome.</li>
+                      <li>Used world-cluster bootstrap intervals, timeout-aware sensitivity analysis, and hierarchical Bayesian modelling.</li>
+                    </ol>
+                    <ol class="dissertation-list lang-zh">
+                      <li>注入可配置的正面 LiDAR 遮挡和间歇扇区数据丢失。</li>
+                      <li>在同一 BARN 环境内匹配 baseline 与 fault，并随机化成对运行顺序。</li>
+                      <li>观测扫描数据、代价地图、规划/控制活动、速度指令、机器人运动和任务结果。</li>
+                      <li>采用按环境聚类的 bootstrap 区间、超时敏感性分析和分层 Bayesian 建模。</li>
+                    </ol>
+                  </section>
+                  <section class="dissertation-detail">
+                    <h4><span class="lang-en">My Contribution</span><span class="lang-zh">个人贡献</span></h4>
+                    <ul class="dissertation-list lang-en">
+                      <li>ROS 2 fault-injection nodes and fault-specific recovery prototypes</li>
+                      <li>Resumable paired campaign orchestration, cleanup, logging, and evidence tracking</li>
+                      <li>Cross-layer instrumentation and rosbag2/MCAP trace analysis</li>
+                      <li>Statistical analysis, classifier experiments, and reproducible research assets</li>
+                    </ul>
+                    <ul class="dissertation-list lang-zh">
+                      <li>ROS 2 故障注入节点与按故障类型设计的恢复原型</li>
+                      <li>支持断点恢复的成对实验编排、进程清理、日志记录与证据追踪</li>
+                      <li>跨层观测以及 rosbag2/MCAP trace 分析</li>
+                      <li>统计分析、分类器实验和可复现研究材料整理</li>
+                    </ul>
+                  </section>
+                </div>
+
+                <section class="dissertation-results">
+                  <div class="dissertation-results-copy">
+                    <p class="dissertation-section-label"><span class="lang-en">Primary matched-success result</span><span class="lang-zh">成功任务配对的主要结果</span></p>
+                    <div class="dissertation-result-list">
+                      <div class="dissertation-result"><span class="lang-en">Frontal masking</span><span class="lang-zh">正面遮挡</span><strong>+5.97 s</strong><small>95% CI [3.36, 8.46]</small></div>
+                      <div class="dissertation-result"><span class="lang-en">Structured dropout</span><span class="lang-zh">结构化数据丢失</span><strong>+4.77 s</strong><small>95% CI [2.11, 7.03]</small></div>
+                    </div>
+                    <p class="dissertation-result-note"><span class="lang-en">Both primary estimates compare matched pairs in which baseline and fault runs reached the goal, showing measurable degradation hidden by a top-level success label.</span><span class="lang-zh">两项主结果均比较 baseline 与 fault 都成功到达目标的成对任务，说明顶层“成功”状态仍可能掩盖可测量的性能退化。</span></p>
+                  </div>
+                  <figure class="dissertation-figure">
+                    <img src="/assets/img/dissertation-completion-time.svg" alt="Completion-time degradation estimates for frontal masking and structured LiDAR dropout">
+                    <figcaption><span class="lang-en">Matched-success completion-time increases with world-cluster bootstrap intervals; all-pair capped estimates are shown as sensitivity analysis.</span><span class="lang-zh">成功任务配对的完成时间增量及按环境聚类的 bootstrap 区间；右侧同时给出包含全部配对的上限敏感性分析。</span></figcaption>
+                  </figure>
+                </section>
+
+                <div class="tech-stack dissertation-tech">
+                  <span class="tech-tag">ROS 2 Jazzy</span><span class="tech-tag">Nav2</span><span class="tech-tag">Gazebo Harmonic</span><span class="tech-tag">Clearpath Jackal</span><span class="tech-tag">BARN</span><span class="tech-tag">Python</span><span class="tech-tag">PyMC</span><span class="tech-tag">rosbag2 / MCAP</span>
+                </div>
+                <p class="dissertation-attribution"><span class="lang-en">BARN worlds and the base ROS 2 simulation originate from the upstream BARN Challenge. The fault models, injection and recovery nodes, experiment orchestration, tracing, statistical analysis, and curated evidence were developed for this dissertation.</span><span class="lang-zh">BARN 环境和基础 ROS 2 仿真来自上游 BARN Challenge；本论文中的故障模型、注入与恢复节点、实验编排、传播追踪、统计分析和证据整理均为本项目完成。</span></p>
+              </article>
+            </li>
+          </ul>
+        </li>
+      
         <li class="subject" id="Projects">
           <h2 class="subject-name">
             <div>
