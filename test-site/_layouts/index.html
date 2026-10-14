@@ -98,7 +98,94 @@
           </h2>
           <ul>
               {% for member in subject.contents %}
-              {% if subject.subject == "Projects" %}
+              {% if subject.subject == "MSc Dissertation" %}
+                <!-- Featured dissertation layout -->
+                <li class="item dissertation-item">
+                  <article class="dissertation-card">
+                    <div class="dissertation-hero">
+                      <div class="dissertation-intro">
+                        <p class="dissertation-kicker"><span class="lang-en">Featured Research · MSc Robotics Dissertation</span><span class="lang-zh">重点研究 · 机器人学硕士论文</span></p>
+                        <h3 class="dissertation-title"><span class="lang-en">{{ member.title }}</span><span class="lang-zh">{{ member.title_zh }}</span></h3>
+                        <div class="dissertation-meta">
+                          <span>{{ member.period }}</span>
+                          <span class="lang-en">{{ member.project_type }}</span><span class="lang-zh">{{ member.project_type_zh }}</span>
+                          <span class="lang-en">{{ member.status }}</span><span class="lang-zh">{{ member.status_zh }}</span>
+                        </div>
+                        <p class="dissertation-summary"><span class="lang-en">{{ member.summary }}</span><span class="lang-zh">{{ member.summary_zh }}</span></p>
+                        <div class="dissertation-metrics" aria-label="Research scope / 研究规模">
+                          {% for metric in member.metrics %}
+                            <div class="dissertation-metric">
+                              <strong>{{ metric.value }}</strong>
+                              <span class="lang-en">{{ metric.label }}</span><span class="lang-zh">{{ metric.label_zh }}</span>
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <div class="dissertation-links">
+                          <a href="{{ member.github }}" target="_blank" rel="noreferrer" class="dissertation-link dissertation-link-primary">
+                            <img src="{{ '/assets/img/github.svg' | prepend: site.baseurl }}" alt="">
+                            <span class="lang-en">View Repository</span><span class="lang-zh">查看代码仓库</span>
+                          </a>
+                          <a href="{{ member.evidence }}" target="_blank" rel="noreferrer" class="dissertation-link">
+                            <img src="{{ '/assets/img/globe.svg' | prepend: site.baseurl }}" alt="">
+                            <span class="lang-en">Explore Evidence</span><span class="lang-zh">查看实验依据</span>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="dissertation-system" aria-label="LiDAR fault propagation path">
+                        <p class="dissertation-system-label"><span class="lang-en">Observed propagation path</span><span class="lang-zh">观测到的故障传播链</span></p>
+                        <div class="dissertation-pipeline">
+                          {% for step in member.pipeline %}
+                            <div class="dissertation-pipeline-step"><span class="lang-en">{{ step.label }}</span><span class="lang-zh">{{ step.label_zh }}</span></div>
+                            {% unless forloop.last %}<span class="dissertation-pipeline-arrow" aria-hidden="true">→</span>{% endunless %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="dissertation-research-grid">
+                      <section class="dissertation-detail">
+                        <h4><span class="lang-en">Problem</span><span class="lang-zh">研究问题</span></h4>
+                        <p><span class="lang-en">{{ member.problem }}</span><span class="lang-zh">{{ member.problem_zh }}</span></p>
+                      </section>
+                      <section class="dissertation-detail">
+                        <h4><span class="lang-en">Method</span><span class="lang-zh">研究方法</span></h4>
+                        <ol class="dissertation-list lang-en">{% for method in member.methods %}<li>{{ method }}</li>{% endfor %}</ol>
+                        <ol class="dissertation-list lang-zh">{% for method in member.methods_zh %}<li>{{ method }}</li>{% endfor %}</ol>
+                      </section>
+                      <section class="dissertation-detail">
+                        <h4><span class="lang-en">My Contribution</span><span class="lang-zh">个人贡献</span></h4>
+                        <ul class="dissertation-list lang-en">{% for contribution in member.contributions %}<li>{{ contribution }}</li>{% endfor %}</ul>
+                        <ul class="dissertation-list lang-zh">{% for contribution in member.contributions_zh %}<li>{{ contribution }}</li>{% endfor %}</ul>
+                      </section>
+                    </div>
+
+                    <section class="dissertation-results">
+                      <div class="dissertation-results-copy">
+                        <p class="dissertation-section-label"><span class="lang-en">Primary matched-success result</span><span class="lang-zh">成功任务配对的主要结果</span></p>
+                        <div class="dissertation-result-list">
+                          {% for result in member.results %}
+                            <div class="dissertation-result">
+                              <span class="lang-en">{{ result.fault }}</span><span class="lang-zh">{{ result.fault_zh }}</span>
+                              <strong>{{ result.value }}</strong>
+                              <small>{{ result.interval }}</small>
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <p class="dissertation-result-note"><span class="lang-en">{{ member.result_note }}</span><span class="lang-zh">{{ member.result_note_zh }}</span></p>
+                      </div>
+                      <figure class="dissertation-figure">
+                        <img src="{{ member.result_figure | prepend: site.baseurl }}" alt="Completion-time degradation estimates for frontal masking and structured LiDAR dropout">
+                        <figcaption><span class="lang-en">{{ member.result_caption }}</span><span class="lang-zh">{{ member.result_caption_zh }}</span></figcaption>
+                      </figure>
+                    </section>
+
+                    <div class="tech-stack dissertation-tech">
+                      {% for tech in member.tech_stack %}<span class="tech-tag">{{ tech }}</span>{% endfor %}
+                    </div>
+                    <p class="dissertation-attribution"><span class="lang-en">{{ member.attribution }}</span><span class="lang-zh">{{ member.attribution_zh }}</span></p>
+                  </article>
+                </li>
+              {% elsif subject.subject == "Projects" %}
                 <!-- Special layout for Projects -->
                 <li class="item project-item">
                   <div class="project-card">
